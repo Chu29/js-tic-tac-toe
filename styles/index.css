@@ -55,7 +55,7 @@ body {
   height: 12rem;
   max-width: 12rem;
   width: 100%;
-  border: 1px solid #2f5755;
+  border: 1px solid;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
   font-size: 5rem;
 }
