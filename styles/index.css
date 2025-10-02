@@ -3,3 +3,35 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #80a1ba;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  width: 40rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9 {
+  height: 12rem;
+  width: 12rem;
+}
