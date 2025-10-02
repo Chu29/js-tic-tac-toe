@@ -5,8 +5,27 @@
 }
 
 body {
-  background-color: #80a1ba;
+  background-color: #3c467b;
   text-align: center;
+}
+
+#reset-btn,
+#new-game {
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: #fff;
+  border-radius: 1rem;
+  background-color: #191913;
+  border: none;
+}
+
+.winner-msg-container {
+ margin-bottom: 3rem;
+}
+
+.win-msg {
+  font-size: 5rem;
 }
 
 .container {
@@ -32,6 +51,11 @@ body {
 .box7,
 .box8,
 .box9 {
+  cursor: pointer;
   height: 12rem;
-  width: 12rem;
+  max-width: 12rem;
+  width: 100%;
+  border: 1px solid #2f5755;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  font-size: 5rem;
 }
