@@ -11,6 +11,7 @@ body {
 }
 
 main{
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +25,7 @@ main{
   font-size: 1.25rem;
   color: #fff;
   border-radius: 1rem;
-  background-color: #191913;
+  background-color: #ED3F27;
   border: none;
 }
 

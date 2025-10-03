@@ -1,7 +1,7 @@
 'use strict'
 
 // select necessary dom elements
-const winMsg = document.querySelector('win-msg')
+const winMsg = document.querySelector('.win-msg')
 const winMsgBox = document.querySelector('.winner-msg-container')
 const newGameBtn = document.querySelector('.new-game')
 const resetGameBtn = document.querySelector('.reset-btn')
@@ -30,6 +30,12 @@ const checkWinner = (playerMoves, wineLines) => {
   })
 }
 
+const displayWinner = () => {
+  winMsgBox.classList.remove('hidden')
+  winMsgBox.style.background = switchPlayer ? '#fab12f' : '#1b3c53'
+  winMsg.textContent = switchPlayer ? 'Player 1 wins' : 'Player 2 wins'
+}
+
 // add event listeners to all the boxes
 for (let i = 0; i < boxes.length; i++) {
   boxes[i].addEventListener('click', () => {
@@ -39,27 +45,34 @@ for (let i = 0; i < boxes.length; i++) {
       boxes[i].innerHTML = '0'
       player0.push(boxes.indexOf(boxes[i]))
       boxes[i].style.background = '#fab12f'
-      switchPlayer = false
       boxes[i].disabled = true
       player0.sort()
 
       isWinner = checkWinner(player0, wineLines)
       if (isWinner) {
-        console.log('Player 1 wins')
-        winMsgBox.classList.remove('hidden')
+        // console.log('Player 1 wins')
+        // winMsgBox.classList.remove('hidden')
+        // winMsgBox.style.background = '#1b3c53'
+        // winMsg.textContent = `Player 2 wins`
+        displayWinner()
       }
+      switchPlayer = false
     } else {
       player1.push(boxes.indexOf(boxes[i]))
       boxes[i].innerHTML = 'x'
       boxes[i].style.background = '#1b3c53'
-      switchPlayer = true
       boxes[i].disabled = true
       player1.sort()
 
       isWinner = checkWinner(player1, wineLines)
       if (isWinner) {
-        console.log('Player 2 wins')
+        // console.log('Player 2 wins')
+        // winMsgBox.classList.remove('hidden')
+        // winMsgBox.style.background = '#1b3c53'
+        // winMsg.textContent = `Player 2 wins`
+        displayWinner()
       }
+      switchPlayer = true
     }
   })
 }
