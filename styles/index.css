@@ -7,6 +7,14 @@
 body {
   background-color: #3c467b;
   text-align: center;
+  position: relative;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
 }
 
 #reset-btn,
@@ -21,7 +29,18 @@ body {
 }
 
 .winner-msg-container {
- margin-bottom: 3rem;
+  padding: 20px;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  background-color: #3c467b;
+  box-shadow: 0 0 1rem #0000004d;
+  max-width: 450px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .win-msg {
@@ -30,7 +49,6 @@ body {
 
 .container {
   display: flex;
-  height: 70vh;
   justify-content: center;
   align-items: center;
 }
@@ -56,6 +74,10 @@ body {
   max-width: 12rem;
   width: 100%;
   border: 1px solid;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1rem #0000004d;
   font-size: 5rem;
+}
+
+.hidden {
+  display: none;
 }

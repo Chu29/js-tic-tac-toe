@@ -2,6 +2,7 @@
 
 // select necessary dom elements
 const winMsg = document.querySelector('win-msg')
+const winMsgBox = document.querySelector('.winner-msg-container')
 const newGameBtn = document.querySelector('.new-game')
 const resetGameBtn = document.querySelector('.reset-btn')
 const boxes = [...document.querySelectorAll('.box')]
@@ -11,20 +12,20 @@ const player1 = []
 
 const wineLines = [
   [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
   [0, 3, 6],
+  [0, 4, 8],
   [1, 4, 7],
   [2, 5, 8],
-  [0, 4, 8],
   [2, 4, 6],
+  [3, 4, 5],
+  [6, 7, 8],
 ]
 
 // check if there's a winner
 const checkWinner = (playerMoves, wineLines) => {
   return wineLines.some((outcome) => {
     return outcome.every((index) => {
-      playerMoves.includes(index)
+      return playerMoves.includes(index)
     })
   })
 }
@@ -45,6 +46,7 @@ for (let i = 0; i < boxes.length; i++) {
       isWinner = checkWinner(player0, wineLines)
       if (isWinner) {
         console.log('Player 1 wins')
+        winMsgBox.classList.remove('hidden')
       }
     } else {
       player1.push(boxes.indexOf(boxes[i]))
