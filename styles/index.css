@@ -5,17 +5,21 @@
 }
 
 body {
-  background-color: #3c467b;
+  background: #3c467b80;
   text-align: center;
   position: relative;
 }
 
-main{
+main {
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
+}
+
+h1 {
+  font-size: 6rem;
 }
 
 #reset-btn,
@@ -25,7 +29,7 @@ main{
   font-size: 1.25rem;
   color: #fff;
   border-radius: 1rem;
-  background-color: #ED3F27;
+  background-color: #ed3f27;
   border: none;
 }
 

@@ -3,12 +3,12 @@
 // select necessary dom elements
 const winMsg = document.querySelector('.win-msg')
 const winMsgBox = document.querySelector('.winner-msg-container')
-const newGameBtn = document.querySelector('.new-game')
+const newGameBtn = document.querySelector('#new-game')
 const resetGameBtn = document.querySelector('.reset-btn')
 const boxes = [...document.querySelectorAll('.box')]
 let switchPlayer = true
-const player0 = []
-const player1 = []
+let player0 = []
+let player1 = []
 
 const wineLines = [
   [0, 1, 2],
@@ -50,10 +50,6 @@ for (let i = 0; i < boxes.length; i++) {
 
       isWinner = checkWinner(player0, wineLines)
       if (isWinner) {
-        // console.log('Player 1 wins')
-        // winMsgBox.classList.remove('hidden')
-        // winMsgBox.style.background = '#1b3c53'
-        // winMsg.textContent = `Player 2 wins`
         displayWinner()
       }
       switchPlayer = false
@@ -66,13 +62,21 @@ for (let i = 0; i < boxes.length; i++) {
 
       isWinner = checkWinner(player1, wineLines)
       if (isWinner) {
-        // console.log('Player 2 wins')
-        // winMsgBox.classList.remove('hidden')
-        // winMsgBox.style.background = '#1b3c53'
-        // winMsg.textContent = `Player 2 wins`
         displayWinner()
       }
       switchPlayer = true
     }
   })
 }
+
+newGameBtn.addEventListener('click', () => {
+  winMsgBox.classList.add('hidden')
+  switchPlayer = true
+  player0 = []
+  player1 = []
+  for (const box of boxes) {
+    box.disabled = false
+    box.style.background = '#fff'
+    box.innerHTML = ''
+  }
+})
