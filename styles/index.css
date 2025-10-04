@@ -3,3 +3,86 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background: #3c467b80;
+  text-align: center;
+  position: relative;
+}
+
+main {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+#reset-btn,
+#new-game {
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: #fff;
+  border-radius: 1rem;
+  background-color: #ed3f27;
+  border: none;
+}
+
+.winner-msg-container {
+  padding: 20px;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  background-color: #3c467b;
+  box-shadow: 0 0 1rem #0000004d;
+  max-width: 450px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.win-msg {
+  font-size: 5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  width: 40rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9 {
+  cursor: pointer;
+  height: 12rem;
+  max-width: 12rem;
+  width: 100%;
+  border: 1px solid;
+  box-shadow: 0 0 1rem #0000004d;
+  font-size: 5rem;
+}
+
+.hidden {
+  display: none;
+}
