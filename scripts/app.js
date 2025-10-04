@@ -4,7 +4,7 @@
 const winMsg = document.querySelector('.win-msg')
 const winMsgBox = document.querySelector('.winner-msg-container')
 const newGameBtn = document.querySelector('#new-game')
-const resetGameBtn = document.querySelector('.reset-btn')
+const resetGameBtn = document.querySelector('#reset-btn')
 const boxes = [...document.querySelectorAll('.box')]
 let switchPlayer = true
 let player0 = []
@@ -69,7 +69,7 @@ for (let i = 0; i < boxes.length; i++) {
   })
 }
 
-newGameBtn.addEventListener('click', () => {
+const initGame = () => {
   winMsgBox.classList.add('hidden')
   switchPlayer = true
   player0 = []
@@ -79,4 +79,7 @@ newGameBtn.addEventListener('click', () => {
     box.style.background = '#fff'
     box.innerHTML = ''
   }
-})
+}
+
+newGameBtn.addEventListener('click', initGame)
+resetGameBtn.addEventListener('click', initGame)
